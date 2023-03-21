@@ -10,6 +10,7 @@ class FormaBolo
     public function fazerBolo(): void 
     {
         $this->misturaIngredients();
+        
     }
     
     public function misturaIngredients(): void 
