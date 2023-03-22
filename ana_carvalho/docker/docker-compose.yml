@@ -1,6 +1,6 @@
-version: '3' 
+version: '3'
 
-services:
+services: 
   nginx:
     container_name: container-nginx
     image: unialfa-nginx
@@ -11,4 +11,3 @@ services:
       - "8000:80"
     volumes:
       - ./html:/usr/share/nginx/html
-

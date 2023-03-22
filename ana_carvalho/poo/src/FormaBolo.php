@@ -2,31 +2,37 @@
 
 namespace Unialfa\Poo;
 
-class FormaBolo 
-{
+class FormaBolo{
+
     public array $ingredientes = ["Farinha", "Ovo", "Leite", "Açucar"];
     public int $tempoForno = 1;
 
-    public function fazerBolo(): void 
+    public function fazerBolo(): void
     {
-        $this->misturaIngredients();
-        
+        $this->misturaIngredientes();
+
     }
-    
-    public function misturaIngredients(): void 
-    {
-        if(count($this->ingredientes) === 0 ) {
+    public function misturaIngredientes(): void{
+        if (count($this->ingredientes) === 0) {
+
             echo "Não temos ingredientes suficientes";
             return;
         }
-        echo "isturando ingredientes " . json_encode($this->ingredientes . '<br>'); 
+            echo "Misturando os ingredientes " . json_encode($this->ingredientes . '<br>');
     }
 
-    public function colocarNoForno( int $tempoForno = 1): void
+    public function colocarNoForno(int $tempoForno = 1): void
     {
         $this->tempoForno = $tempoForno;
         echo "Colocando no forno o bolo, tempo para ficar pronto é de $this->tempoForno horas <br>";
+
     }
+
+    public function transferirIngredientes(string $ingredientes, FormaBolo $boloAReceberIngredientes):void
+    {
+        array_push($boloAReceberIngredientes->ingredientes, $ingrediente);
+
+        echo "Ingredientes enviados para o outro bolo <br>";
+    }
+
 }
-
-
